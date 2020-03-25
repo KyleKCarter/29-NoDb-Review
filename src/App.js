@@ -3,12 +3,13 @@ import './App.css';
 
 //components
 import PostDestination from './Components/PostDestination'
+import ViewDestination from './Components/ViewDestination'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-
+      currentView: ''
     }
   }
 
@@ -16,7 +17,21 @@ class App extends React.Component {
   return (
     <div className="App">
       <h1>Travel Site</h1>
-      <PostDestination />
+      <nav>
+        <button onClick={() => this.setState({currentView: 'post'})}>Post Page</button>
+        <button onClick={() => this.setState({currentView: 'destinations'})}>Destinations Page</button>
+      </nav>
+      {
+        this.state.currentView === 'post'
+        ?
+        <PostDestination />
+        :
+        this.state.currentView === 'destinations'
+        ?
+        <ViewDestination />
+        :
+        null
+      }
     </div>
   );
   }
