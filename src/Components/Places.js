@@ -57,13 +57,13 @@ class Places extends Component {
                 {
                     this.state.editStatus === true
                     ?
-                    <div>
+                    <section>
                         <input type="text" placeholder='Image' name='img' onChange={this.handleChange} />
                         <input type="text" placeholder='Place' name='place' onChange={this.handleChange} />
                         <input type="text" placeholder='Dates' name='dates' onChange={this.handleChange} />
                         <input type="text" placeholder='Weather' name='weather' onChange={this.handleChange} />
                         <button onClick={this.updateDestination}>Update</button>
-                    </div>
+                    </section>
                     :
                     null
                 }

@@ -25,6 +25,12 @@ class PostDestination extends Component {
             weather
         }).then(response => {
             console.log(response)
+            this.setState({
+                img: '',
+                place: '',
+                dates: '',
+                weather: ''
+            })
         }).catch(error => {
             console.log(error)
         })
@@ -32,14 +38,15 @@ class PostDestination extends Component {
 
     render() {
         // console.log(this.state)
+        const {img, place, dates, weather} = this.state;
         return (
             <div>
                 <h1>Post Destination</h1>
-                <input type="text" placeholder='Place' onChange={this.handleChange} name='place'/>
-                <input type="text" placeholder='Img' onChange={this.handleChange} name='img'/>
-                <img src={this.state.img} alt=""/>
-                <input type="text" placeholder='Dates' onChange={this.handleChange} name='dates'/>
-                <input type="text" placeholder='Weather' onChange={this.handleChange} name='weather'/>
+                <input type="text" placeholder='Place' onChange={this.handleChange} name='place' value={place}/>
+                <input type="text" placeholder='Img' onChange={this.handleChange} name='img' value={img}/>
+                <img src={img} alt=""/>
+                <input type="text" placeholder='Dates' onChange={this.handleChange} name='dates' value={dates}/>
+                <input type="text" placeholder='Weather' onChange={this.handleChange} name='weather' value={weather}/>
                 <button onClick={this.handleClick}>Add Destination</button>
             </div>
         )

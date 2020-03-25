@@ -4,6 +4,7 @@ import './App.css';
 //components
 import PostDestination from './Components/PostDestination'
 import ViewDestination from './Components/ViewDestination'
+import FunctionalComponent from './Components/functionalComponent'
 
 class App extends React.Component {
   constructor() {
@@ -32,6 +33,9 @@ class App extends React.Component {
         :
         null
       }
+      <footer>
+        <FunctionalComponent />
+      </footer>
     </div>
   );
   }
