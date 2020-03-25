@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class PostDestination extends Component {
     constructor() {
@@ -17,7 +18,16 @@ class PostDestination extends Component {
 
     handleClick = () => {
         const {img, place, dates, weather} = this.state;
-        
+        axios.post('/api/travel', {
+            img,
+            place,
+            dates,
+            weather
+        }).then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        })
     }
 
     render() {
